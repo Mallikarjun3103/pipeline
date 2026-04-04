@@ -1,30 +1,25 @@
 pipeline {
-  agent any
-  
-  stages {
-  
-    stage('SCM checkout'){
-   
-     steps{
-       checkout scm
-       }
+    agent any
 
-     }
+    stages {
 
-    stage('build stage'){
-      steps {
-        echo "building war file....."  
+        stage('SCM checkout') {
+            steps {
+                checkout scm
+            }
         }
 
-      }
-
-    stage('deploy'){
-      steps {
-        echo "deploying the code"
+        stage('build stage') {
+            steps {
+                echo "building war file....."
+            }
         }
 
-      }
+        stage('deploy') {
+            steps {
+                echo "deploying the code"
+            }
+        }
 
     }
-
 }
