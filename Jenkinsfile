@@ -9,9 +9,6 @@ pipeline {
             }
         }
 
-
-
-
         stage('build stage') {
             steps {
                 echo "building war file....."
