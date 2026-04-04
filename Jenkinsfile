@@ -3,24 +3,28 @@ pipeline {
   
   stages {
   
-  stage('SCM checkout'){
+    stage('SCM checkout'){
    
-    echo "pulling code from github"
-    git ""
+     steps{
+       checkout scm
+       }
+
+     }
+
+    stage('build stage'){
+      steps {
+        echo "building war file....."  
+        }
+
+      }
+
+    stage('deploy'){
+      steps {
+        echo "deploying the code"
+        }
+
+      }
 
     }
-
-  stage('build stage'){
-
-    echo "building war file....."  
-
-    }
-
-  stage('deploy'){
-  
-    echo "deploying the code"
-
-    }
-  }
 
 }
